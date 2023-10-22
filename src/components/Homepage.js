@@ -1,29 +1,21 @@
-"use client"
-import AboutPage from './ourstory/page'
-import { IoIosCut } from "react-icons/io";
-import { TfiCut } from "react-icons/tfi";
-import { NextPage } from "next";
-import slide1 from "./images/FLASHMEUP-15.jpg"
-import slide2 from "./images/FLASHMEUP-49.jpg"
-import slide3 from "./images/FLASHMEUP-36.jpg"
-import slide4 from "./images/FLASHMEUP-63.jpg"
-import crousalPick1 from "./images/FLASHMEUP-29.jpg"
-import crousalPick2 from "./images/FLASHMEUP-37.jpg"
-import crousalPick3 from "./images/FLASHMEUP-51.jpg"
-import crousalPick4 from "./images/FLASHMEUP-38.jpg"
-import crousalPick5 from "./images/FLASHMEUP-39.jpg"
-import crousalPick6 from "./images/FLASHMEUP-43.jpg"
-import crousalPick7 from "./images/FLASHMEUP-45.jpg"
-import crousalPick8 from "./images/FLASHMEUP-54.jpg"
-import crousalPick9 from "./images/FLASHMEUP-83.jpg"
-import crousalPick10 from "./images/FLASHMEUP-81.jpg"
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import "./css/style.css"
+import React, { useEffect, useState } from "react";
+import slide1 from "../images/FLASHMEUP-15.jpg"
+import slide2 from "../images/FLASHMEUP-49.jpg"
+import slide3 from "../images/FLASHMEUP-36.jpg"
+import slide4 from "../images/FLASHMEUP-63.jpg"
+import crousalPick1 from "../images/FLASHMEUP-29.jpg"
+import crousalPick2 from "../images/FLASHMEUP-37.jpg"
+import crousalPick3 from "../images/FLASHMEUP-51.jpg"
+import crousalPick4 from "../images/FLASHMEUP-38.jpg"
+import crousalPick5 from "../images/FLASHMEUP-39.jpg"
+import crousalPick6 from "../images/FLASHMEUP-43.jpg"
+import crousalPick7 from "../images/FLASHMEUP-45.jpg"
+import crousalPick8 from "../images/FLASHMEUP-54.jpg"
+import crousalPick9 from "../images/FLASHMEUP-83.jpg"
+import crousalPick10 from "../images/FLASHMEUP-81.jpg"
 
 
-export default function Home() {
-
+function Homepage () {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slide = [
@@ -51,15 +43,14 @@ export default function Home() {
       setCurrentIndex(newIndex);
   }
   return (
-    
     <div>
-    <div id="animation-carousel" className="relative w-full" data-carousel="static" style={{height:"100%"}}>
+       <div id="animation-carousel" className="relative w-full" data-carousel="static" style={{height:"100%"}}>
 {/* <!-- Carousel wrapper --> */}
 <div className="relative h-100 rounded-lg md:h-100" style={{height:"55rem"}}>
  {/* <!-- Item 1 --> */}
 <div className=" duration-200 ease-linear" data-carousel-item>
     {/* <img src={slide[0].src} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." /> */}
-    <Image style={{height:"100%"}} src={slide[currentIndex].src} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
+    <img style={{height:"100%"}} src={slide[currentIndex].src} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-100" alt="..."/>
         
 </div>
 </div>
@@ -90,59 +81,46 @@ export default function Home() {
     </div>
   </main>
 </div>
-<div className='ourServices flex justify-around p-24'>
-    <div><div className='serviceSnap'><span><TfiCut  /></span></div></div>
-    <div><div className='serviceSnap'><span><IoIosCut /></span></div></div>
-    <div><div className='serviceSnap'><span><IoIosCut /></span></div></div>
-    <div><div className='serviceSnap'><span><IoIosCut /></span></div></div>
-
-</div>
-<div>
 <div className="container mx-auto pt-2">
   <div className="-m-1 flex flex-wrap md:-m-2">
-    <div className="flex w-1/2 flex-wrap">
-      <div className="w-1/2 p-1 md:p-2">
-        <Image
+    <div className="flex w-1/2 flex-wrap d-flex">
+      <div className="w-1/2 p-1 md:p-2 first-pick">
+        <img
           alt="gallery"
-          className="block PhotoGaleryBlock h-full w-full rounded-lg object-cover object-center"
+          className="block PhotoGaleryBlock h-full w-28 rounded-lg object-cover object-center"
           src={crousalPick1}/>
       </div>
-      <div className="w-1/2 p-1 md:p-2">
-      <Image
+      <div className="w-1/2 p-1 md:p-2 second-pick">
+      <img
           alt="gallery"
-          className="block PhotoGaleryBlock h-full w-full rounded-lg object-cover object-center"
+          className="block secondimg-pick PhotoGaleryBlock h-full w-full rounded-lg object-cover object-center"
           src={crousalPick9}/>
       </div>
-      <div className="w-full p-1 md:p-2">
-      <Image
+      <div className="w-full p-1 md:p-2 tird-pick">
+      <img
           alt="gallery"
-          className="block PhotoGaleryBlock h-full w-full rounded-lg object-cover object-center"
+          className="block tirdimg-pick PhotoGaleryBlock h-full w-full rounded-lg object-cover object-center"
           src={crousalPick10}/>
       </div>
-    </div>
-    <div className="flex w-1/2 flex-wrap">
-      <div className="w-full p-1 md:p-2">
-      <Image
+      <div className="w-full p-1 md:p-2 forth-pick">
+      <img
           alt="gallery"
           className="block PhotoGaleryBlock h-full w-full rounded-lg object-cover object-center"
+          src={crousalPick5}/>
+      </div>
+      <div className="w-full p-1 md:p-2 fifth-pick">
+      <img
+          alt="gallery"
+          className="block fifthimg-pick PhotoGaleryBlock h-full w-full rounded-lg object-cover object-center"
           src={crousalPick4}/>
       </div>
-      <div className="w-1/2 p-1 md:p-2">
-        <Image
-          alt="gallery"
-          className="block PhotoGaleryBlock h-full w-full rounded-lg object-cover object-center"
-          src={crousalPick3} />
-      </div>
-      <div className="w-1/2 p-1 md:p-2">
-        <Image
-          alt="gallery"
-          className="block PhotoGaleryBlock h-full w-full rounded-lg object-cover object-center"
-          src={crousalPick8} />
-      </div>
     </div>
+     
+    
   </div>
 </div>
-</div>
-</div>
+    </div>
   )
 }
+
+export default Homepage;
